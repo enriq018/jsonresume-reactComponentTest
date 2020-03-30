@@ -1,7 +1,7 @@
 var mockData ={
   "basics": {
     "email": "john@gmail.com",
-    "label": "Hotel",
+    "label": "Cool guy",
     "location": {
       "address": "2712 Broadway St",
       "postalCode": "CA 94115",

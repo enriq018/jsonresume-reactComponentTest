@@ -1,4 +1,4 @@
-.resume-main-container {
+/*.resume-main-container {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
@@ -6,4 +6,4 @@
 .resume-right-container {
 	overflow-y: scroll;
 	height:95vh;
-}
+}*/

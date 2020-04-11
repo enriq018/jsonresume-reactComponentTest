@@ -1,14 +1,25 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+import TemplatePaper from './templateComponents/paper'
 
 import './App.css';
 import axios from 'axios';
 import htmlToImage from 'html-to-image';
 
-import paper from './paper.jpeg';
+import paper from './images/templates/paper.jpeg';
+
 
 import mockData from './mockData.js';
 // import mockHtml from './mockHtml.js';
-const themes = ['Elegant', 'Paper', 'Kendall', 'Flat', 'Modern', 'Classy', 'Class', 'Short', 'Kwan', 'OnePage', 'Spartan', 'Stackoverflow']
+// const themes = ['Elegant', 'Paper', 'Kendall', 'Flat', 'Modern', 'Classy', 'Class', 'Short', 'Kwan', 'OnePage', 'Spartan', 'Stackoverflow']
+const themes = ['Paper', 'Paper', 'Paper']
+
 const getRandomArbitrary = (min, max) => {
   return Math.floor(Math.random() * (max - min) + min);
 }
@@ -33,8 +44,13 @@ const LandingMain = () => (
         <div className="col-md-9">
           <h1 className="resume-home-landing-title font-weight-bold">Welcome to our Resume Builder!</h1>
           <p className="lead text-white">You can create a resume using one of our templates.</p>
-          <a href="#" className="btn btn-primary m-2 shadow">Create Resume</a>
-          <a href="#" className="btn btn-primary m-2 shadow">View Saved Resumes</a>
+          <Link to="/form">          
+            <a href="#" className="btn btn-primary m-2 shadow">Create Resume</a> 
+          </Link>
+          <Link to="/templates">          
+            <a href="#" className="btn btn-primary m-2 shadow">View Saved Resumes</a>
+          </Link>
+
         </div>
       </div>
     </div>
@@ -100,7 +116,7 @@ const TemplateModal2 = () => (
         <div className="modal-body">  
           <div className="row">
             
-
+          <TemplatePaper/>
           </div>                    
         </div>
       </div>
@@ -115,9 +131,11 @@ const FormLeft = () => (
     <h5>TEMPLATE NAME</h5>
     <p>You are minutes away from creating your own resume!</p>
     <input className="shadow" type="submit" name="" value="Change Template"  data-toggle="modal" data-target="#exampleModalCenter"/>
-    <input className="shadow" type="submit" name="" value="Create Resume" data-toggle="modal" data-target="#exampleModalCenter2"/><br/>
+    <Link to="/resume">          
+      <input className="shadow" type="submit" name="" value="Create Resume"/>
+    </Link>
       <TemplateModal/>
-      <TemplateModal2/>
+      {/* <TemplateModal2/> */}
   </div>
 )
 
@@ -257,23 +275,52 @@ const DemoTemplate = () => (
   </div>
 )
 
-const AppPresentation = ({resume}) => (
+const HomePage = () => (
   <React.Fragment>
-    <Nav/>
-    <LandingMain />
-    <DemoContainer/>
-    <hr/>
-    <FormContainer/>
-    <hr/>
-    <div className="container">
-      <div dangerouslySetInnerHTML={{__html: resume}} />
-    </div>
-  </React.Fragment>
-  
+  <Nav/>
+  <LandingMain />
+  <DemoContainer/>
+
+    {/* <TemplatePaper data={mockData}/> */}
+
+  <hr/>
+  {/* <FormContainer/> */}
+  <hr/>
+  <div className="container">
+    {/* <div dangerouslySetInnerHTML={{__html: resume}} /> */}
+  </div>
+</React.Fragment>
+)
+
+const Test = () => (
+  <div>
+    {/* <h1>We can add stuff here</h1> */}
+    <TemplatePaper data={mockData}/>
+  </div>
+)
 
 
-  
-        
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+
+// add form link and use that render thing to pass state 
+const AppPresentation = ({resume}) => (
+  <Router>
+      <Route path={"/test"} exact={true} component={Test}/>
+
+    <Route path={"/"} exact={true} component={HomePage}/>
+    <Route path={"/templates"} exact={true} component={DemoContainer}/>
+    <Route path={"/form"} exact={true} component={FormContainer}/>
+    <Route path={"/resume"} exact={true} render={() => (
+      // <div dangerouslySetInnerHTML={{__html: resume}} />
+      <Test/>
+    )}/>
+
+
+  </Router>      
 )
 
 class App extends React.Component {
@@ -294,7 +341,7 @@ class App extends React.Component {
       .then((response) => {
         console.log(response)
         
-        // context.setState({body: response.data})
+        context.setState({body: response.data})
       })
       .catch((error) => {
         console.log(error);

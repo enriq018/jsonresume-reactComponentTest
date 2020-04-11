@@ -10,27 +10,58 @@ var mockData ={
       "region": "California"
     },
     "name": "John Wick",
-    "phone": "(912) 555-4321",
-    "picture": "",
+    "phone": "(912) 555-4322",
+    "picture": "https://img.huffingtonpost.com/asset/5dcc613f1f00009304dee539.jpeg?cache=QaTFuOj2IM&ops=crop_834_777_4651_2994%2Cscalefit_720_noupscale",
     "profiles": [{
       "network": "Twitter",
       "username": "john",
       "url": "http://twitter.com/john"
     }],
     "summary": "A summary of John Doe...",
-    "website": "http://johndoe.com",
+    "website": "http://itsworking.com",
   },
   "work": [{
-    "company": "Company",
+    "company": "Company1",
     "website": "http://company.com",
-    "position": "President",
+    "position": "President1",
     "startDate": "2013-01-01",
     "endDate": "2014-01-01",
-    "summary": "Description...",
+    "summary": "Company summary 1 here",
     "highlights": [
-      "Started the company"
+      "Company 1 First sentance example would go here and explain some great stuff.",
+      "Company 1 second sentance example would go here and explain some great stuff.",
+
     ]
-  }],
+  },
+  {
+    "company": "Company2",
+    "website": "http://company.com",
+    "position": "President2",
+    "startDate": "2013-01-01",
+    "endDate": "2014-01-01",
+    "summary": "summary 2",
+    "highlights": [
+      "Company 2 First sentance example would go here and explain some great stuff.",
+      "Company 2 second sentance example would go here and explain some great stuff.",
+      "Company 2 third sentance example would go here and explain some great stuff.",
+
+    ]
+  },
+  {
+    "company": "Company3",
+    "website": "http://company.com",
+    "position": "President2",
+    "startDate": "2013-01-01",
+    "endDate": "2014-01-01",
+    "summary": "summary 2",
+    "highlights": [
+      "Company 2 First sentance example would go here and explain some great stuff.",
+      "Company 2 second sentance example would go here and explain some great stuff.",
+      "Company 2 third sentance example would go here and explain some great stuff.",
+
+    ]
+  }
+],
   "volunteer": [{
     "organization": "Organization",
     "position": "Volunteer",
@@ -39,7 +70,9 @@ var mockData ={
     "endDate": "2013-01-01",
     "summary": "Description...",
     "highlights": [
-      "Awarded 'Volunteer of the Month'"
+      "Awarded 'Volunteer of the Month",
+      "Awarded 'Volunteer of the Month2",
+
     ]
   }],
   "education": [{
@@ -52,7 +85,19 @@ var mockData ={
     "courses": [
       "DB1101 - Basic SQL"
     ]
-  }],
+  },
+  {
+    "institution": "University2",
+    "area": "Software Development2",
+    "studyType": "Bachelor",
+    "startDate": "2011-01-01",
+    "endDate": "2013-01-01",
+    "gpa": "4.0",
+    "courses": [
+      "DB1101 - Basic SQL"
+    ]
+  }
+],
   "awards": [{
     "title": "Award",
     "date": "2014-11-01",

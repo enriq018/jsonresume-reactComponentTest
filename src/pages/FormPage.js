@@ -79,7 +79,8 @@ return (
     <Link to={{
           pathname: '/resume',
           state: {
-            resumeData:mockdata
+            resumeData:mockdata,
+            selectedTemplate: selectedTemplate.name,
           }
         }}>
             <input className="shadow" type="submit" name="" value="Create Resume"/>
@@ -225,7 +226,7 @@ class FormPage extends React.Component {
 
   goBack(){
     this.props.history.goBack();
-}
+  }
   render() {
     const context = this;
     console.log("FUCK U VALORANTDROP", context.state.selectedTemplate)

@@ -1,11 +1,13 @@
 import React from 'react';
-import TemplatePaper from './templateComponents/paper'
-import mockData from '../mockData'
+import TemplatePaper from './templateComponents/paper';
+
+// import mockData from '../mockData'
 class ResumeWrapper extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-
+      selectedTemplate: this.props.location.state.name,
+      resumeData: this.props.location.state.resumeData
     }
     this.goBack = this.goBack.bind(this);
   }
@@ -14,7 +16,7 @@ class ResumeWrapper extends React.Component {
   }
 
   render() {
-    const resumeTemplate = <TemplatePaper data={mockData}/>;
+    const resumeTemplate = <TemplatePaper data={this.state.resumeData}/>;
     return (
       <React.Fragment>
         <button onClick={()=> this.goBack()}> Go Back</button>

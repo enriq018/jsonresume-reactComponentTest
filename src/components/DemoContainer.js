@@ -17,7 +17,7 @@ const themes = [paper, classy, paper, classy, paper, classy]
 
 
 const DemoTemplate = ({themeObject}) => (
-  <div className="col-md-4 p-3">
+  <div className="col-md-4 p-3" id="resume-templates">
     <div className="card box-shadow">
       <img className="card-img-top" src={themeObject.image}/>
       <div className="card-body">

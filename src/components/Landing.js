@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
+const moveToLink = id => document.getElementById(id).scrollIntoView(true);
 
 const Landing = () => (
   <div className="text-center py-5 resume-home-landing-container" >
@@ -9,15 +10,10 @@ const Landing = () => (
       <div className="col-md-9">
         <h1 className="resume-home-landing-title font-weight-bold">Welcome to our Resume Builder!</h1>
         <p className="lead text-white">You can create a resume using one of our templates.</p>
-        <Link to={{
-          pathname: '/form',
-          state: {
-            selectedTemplate: 'Paper'
-          }
-        }}>
-          <a href="#" className="btn btn-primary m-2 shadow">Create Resume</a> 
 
-        </Link>
+        <a onClick={() => moveToLink('resume-templates')}   className="btn btn-primary m-2 shadow">Create Resume</a> 
+
+      
         
         {/* <Link to="/form">          
           <a href="#" className="btn btn-primary m-2 shadow">Create Resume</a> 

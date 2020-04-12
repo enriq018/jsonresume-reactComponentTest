@@ -240,7 +240,7 @@ const Interests = () => (
             Wildlife:
             </strong>
           </span>
-          Ferrets, Unicorns, test
+          Ferrets, Unicorns, Cats
         </p>
       </div>
     </div>
